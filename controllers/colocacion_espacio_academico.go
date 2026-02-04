@@ -1,8 +1,6 @@
 package controllers
 
 import (
-	"fmt"
-
 	"github.com/astaxie/beego"
 	"github.com/udistrital/horario_mid/services"
 	"github.com/udistrital/utils_oas/errorhandler"
