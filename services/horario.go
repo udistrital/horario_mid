@@ -3,7 +3,7 @@ package services
 import (
 	"strconv"
 
-	"github.com/udistrital/sga_horario_mid/helpers"
+	"github.com/udistrital/horario_mid/helpers"
 	"github.com/udistrital/utils_oas/requestresponse"
 )
 

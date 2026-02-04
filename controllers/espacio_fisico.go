@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/udistrital/sga_horario_mid/services"
+	"github.com/udistrital/horario_mid/services"
 	"github.com/udistrital/utils_oas/errorhandler"
 )
 
@@ -28,7 +28,6 @@ func (c *EspacioFisicoController) GetEspaciosOCupadoSegunPeriodo() {
 
 	espacioFisicoId := c.GetString("espacio-fisico-id")
 	periodoId := c.GetString("periodo-id")
-
 	respuesta := services.GetEspaciosFisicosOcupadosSegunPeriodo(espacioFisicoId, periodoId)
 
 	c.Ctx.Output.SetStatus(respuesta.Status)
