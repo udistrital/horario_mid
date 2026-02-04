@@ -6,17 +6,18 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/udistrital/utils_oas/request"
 	"github.com/udistrital/utils_oas/requestresponse"
+	"fmt"
 )
 
 func GetEspaciosFisicosOcupadosSegunPeriodo(espacioFisicoId, periodoId string) requestresponse.APIResponse {
 	urlColocaciones := beego.AppConfig.String("HorarioService") +
 		"colocacion-espacio-academico?query=PeriodoId:" + periodoId + ",EspacioFisicoId:" + espacioFisicoId + ",Activo:true&limit=0"
-
+	fmt.Println("urlColocaciones", urlColocaciones)
 	var colocaciones map[string]interface{}
 	if err := request.GetJson(urlColocaciones, &colocaciones); err != nil {
 		return requestresponse.APIResponseDTO(false, 500, nil, "error en el servicio de horarios"+err.Error())
 	}
-
+	fmt.Println("colocaciones", colocaciones)
 	var ocupados []map[string]interface{}
 
 	for _, colocacion := range colocaciones["Data"].([]interface{}) {

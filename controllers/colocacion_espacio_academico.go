@@ -35,7 +35,6 @@ func (c *ColocacionEspacioAcademicoController) URLMapping() {
 // @Failure 403 body is empty
 // @router / [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -44,7 +43,6 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() 
 	semestreId := c.GetString("semestre-id")
 	periodoId := c.GetString("periodo-id")
 
-	fmt.Println(horarioId)
 	var respuesta requestresponse.APIResponse
 
 	switch {
@@ -72,7 +70,6 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() 
 // @Failure 403 body is empty
 // @router /info-adicional/:id [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionInfoAdicional() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -92,7 +89,6 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionInfoAdicional() {
 // @Failure 404 not found resource
 // @router /:id [delete]
 func (c *ColocacionEspacioAcademicoController) DeleteColocacionEspacioAcademico() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -113,7 +109,6 @@ func (c *ColocacionEspacioAcademicoController) DeleteColocacionEspacioAcademico(
 // @Failure 403 body is empty
 // @router /sin-detalles [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionesGrupoSinDetalles() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -136,7 +131,6 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesGrupoSinDetalles()
 // @Failure 403 body is empty
 // @router /grupo-estudio/sobreposicion [get]
 func (c *ColocacionEspacioAcademicoController) GetSobreposicionEnGrupoEstudio() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -159,7 +153,6 @@ func (c *ColocacionEspacioAcademicoController) GetSobreposicionEnGrupoEstudio() 
 // @Failure 403 body is empty
 // @router /espacio-fisico/sobreposicion [get]
 func (c *ColocacionEspacioAcademicoController) GetSobreposicionEspacioFisico() {
-		fmt.Println("ENTRA AL CONTROLADOR")
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
@@ -180,8 +173,6 @@ func (c *ColocacionEspacioAcademicoController) GetSobreposicionEspacioFisico() {
 // @Failure 400 the request contains incorrect syntax
 // @router /copiar [post]
 func (c *ColocacionEspacioAcademicoController) PostCopiarColocacionesAGrupoEstudio() {
-		fmt.Println("ENTRA AL CONTROLADOR")
-
 
 	defer errorhandler.HandlePanic(&c.Controller)
 
