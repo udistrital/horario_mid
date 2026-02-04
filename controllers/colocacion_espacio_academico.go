@@ -1,10 +1,8 @@
 package controllers
 
 import (
-	"fmt"
-
 	"github.com/astaxie/beego"
-	"github.com/udistrital/sga_horario_mid/services"
+	"github.com/udistrital/horario_mid/services"
 	"github.com/udistrital/utils_oas/errorhandler"
 	"github.com/udistrital/utils_oas/requestresponse"
 )
@@ -35,6 +33,7 @@ func (c *ColocacionEspacioAcademicoController) URLMapping() {
 // @Failure 403 body is empty
 // @router / [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	horarioId := c.GetString("horario-id")
@@ -42,7 +41,6 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() 
 	semestreId := c.GetString("semestre-id")
 	periodoId := c.GetString("periodo-id")
 
-	fmt.Println(horarioId)
 	var respuesta requestresponse.APIResponse
 
 	switch {
@@ -70,6 +68,7 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesSegunParametros() 
 // @Failure 403 body is empty
 // @router /info-adicional/:id [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionInfoAdicional() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	colocacionId := c.Ctx.Input.Param(":id")
@@ -88,6 +87,7 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionInfoAdicional() {
 // @Failure 404 not found resource
 // @router /:id [delete]
 func (c *ColocacionEspacioAcademicoController) DeleteColocacionEspacioAcademico() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	grupoEstudioId := c.Ctx.Input.Param(":id")
@@ -107,6 +107,7 @@ func (c *ColocacionEspacioAcademicoController) DeleteColocacionEspacioAcademico(
 // @Failure 403 body is empty
 // @router /sin-detalles [get]
 func (c *ColocacionEspacioAcademicoController) GetColocacionesGrupoSinDetalles() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	grupoEstudioId := c.GetString("grupo-estudio-id")
@@ -128,6 +129,7 @@ func (c *ColocacionEspacioAcademicoController) GetColocacionesGrupoSinDetalles()
 // @Failure 403 body is empty
 // @router /grupo-estudio/sobreposicion [get]
 func (c *ColocacionEspacioAcademicoController) GetSobreposicionEnGrupoEstudio() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	grupoEstudioId := c.GetString("grupo-estudio-id")
@@ -149,6 +151,7 @@ func (c *ColocacionEspacioAcademicoController) GetSobreposicionEnGrupoEstudio() 
 // @Failure 403 body is empty
 // @router /espacio-fisico/sobreposicion [get]
 func (c *ColocacionEspacioAcademicoController) GetSobreposicionEspacioFisico() {
+
 	defer errorhandler.HandlePanic(&c.Controller)
 
 	colocacionId := c.GetString("colocacion-id")

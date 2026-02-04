@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/udistrital/sga_horario_mid/routers"
+	_ "github.com/udistrital/horario_mid/routers"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/plugins/cors"
