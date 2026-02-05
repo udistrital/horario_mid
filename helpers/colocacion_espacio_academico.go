@@ -75,7 +75,6 @@ func AgregarInfoAdicionalColocacion(colocacion map[string]interface{}) (map[stri
 	if err := GetSedeEdificioSalon(colocacion); err != nil {
 		return nil, fmt.Errorf("error al obtener sede, edificio y salón: %w", err)
 	}
-
 	// Agregar objeto completo de Espacio Académico
 	if id, ok := colocacion["EspacioAcademicoId"].(string); ok {
 		if espacioAcademico, err := ObtenerEspacioAcademicoSegunId(id); err == nil {
@@ -84,7 +83,6 @@ func AgregarInfoAdicionalColocacion(colocacion map[string]interface{}) (map[stri
 			return nil, fmt.Errorf("error al obtener espacio académico: %w", err)
 		}
 	}
-
 	// Obtener el Plan Docente
 	urlCargaPlan := beego.AppConfig.String("PlanDocenteService") + "carga_plan?query=colocacion_espacio_academico_id:" + colocacion["_id"].(string) + ",activo:true"
 	var cargaPlanes map[string]interface{}

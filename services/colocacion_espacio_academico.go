@@ -64,7 +64,6 @@ func GetColocacionInfoAdicional(colocacionId string) requestresponse.APIResponse
 	if err := request.GetJson(urlColocacion, &colocacionEspacioAcademico); err != nil {
 		return requestresponse.APIResponseDTO(false, 500, nil, "Error en el servicio horario"+err.Error())
 	}
-
 	colocacionInfoAdicional, err := helpers.AgregarInfoAdicionalColocacion(colocacionEspacioAcademico["Data"].(map[string]interface{}))
 	if err != nil {
 		return requestresponse.APIResponseDTO(false, 500, nil, err.Error())
