@@ -24,7 +24,7 @@ func DesactivarGrupoEstudio(grupoEstudioId string) (map[string]interface{}, erro
 func ObtenerEspacioAcademicoSegunId(espacioId string) (map[string]interface{}, error) {
 	var resultado map[string]interface{}
 	urlGetEspacio := beego.AppConfig.String("EspaciosAcademicosService") + "espacio-academico?query=_id:" + espacioId + "&fields=nombre,grupo,espacio_academico_padre,activo"
-
+	fmt.Println("URL Get Espacio:", urlGetEspacio)
 	if err := request.GetJson(urlGetEspacio, &resultado); err != nil {
 		return nil, err
 	}
