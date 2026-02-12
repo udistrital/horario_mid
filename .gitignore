@@ -14,8 +14,8 @@ swagger/images/
 swagger/lang/
 swagger/lib/
 swagger.zip
-sga_horario_mid.exe~
-sga_horario_mid
+horario_mid.exe~
+horario_mid
 *.exe
 go.mod
 go.sum
